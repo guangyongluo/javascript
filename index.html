@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+
+        //lesson-1
+
+        // var user = {
+        //     1 : "one",
+        //     name : "罗葳",
+        //     address : {
+        //         province : "四川",
+        //         city : "成都"
+        //     },
+        //     getInfo : function(){
+        //         return "name : " + this.name + " address : " + this.address;
+        //     }
+        // };
+        //
+        // console.log(user["name"]);
+        //
+        // //user.age = 20;
+        // //console.log(user.age);
+        //
+        // console.log(user.age !== undefined);
+        //
+        // console.log("toString" in user);
+        //
+        // console.log(user.hasOwnProperty("name"));
+        // console.log(user.hasOwnProperty("toString"));
+
+        //lesson-2
+
+        // var user={};
+        //
+        // Object.defineProperty(user, "name", {
+        //     configurable : true,
+        //     enumerable : false,
+        //     writable : true,
+        //     value : "罗葳"
+        // });
+        //
+        // console.log(user.name);
+        // // console.log(delete user.name);
+        // user.name = "lwei";
+        // console.log(user.name);
+        //
+        // Object.defineProperties(user, {
+        //     age : {
+        //         configurable : true,
+        //         enumerable : true,
+        //         writable : true,
+        //         value : 19
+        //     },
+        //     address : {
+        //         configurable : true,
+        //         enumerable : true,
+        //         writable : true,
+        //         value : "湖北荆州"
+        //     }
+        // })
+        //
+        // console.log(user.age);
+        // console.log(user.address);
+        //
+        // var desc = Object.getOwnPropertyDescriptor(user, "name");
+        // for(var p in desc){
+        //     console.log(p + " : " + desc[p]);
+        // }
+
+
+        // lesson-3
+        //
+        // var user = {
+        //     age : 20
+        // }
+        //
+        // Object.defineProperties(user, {
+        //     myage :{
+        //         configurable : false,
+        //         enumerable : false,
+        //         set : function(newAge){
+        //             if(newAge < 0){
+        //                 newAge = 0;
+        //             }
+        //             this.age = newAge;
+        //         },
+        //         get : function(){
+        //             return this.age;
+        //         }
+        //     }
+        // })
+        //
+        // user.myage = -100
+        //
+        // console.log(user.age);
+        //
+        //
+        // var user1 = {
+        //     name : "罗葳",
+        //     age : 20,
+        //     get string(){return "name : " + user1.name + " age : " + user1.age},
+        //
+        //     get birthday(){
+        //         var birthday = new Date();
+        //         return birthday.setFullYear(birthday.getFullYear() - 20);
+        //     },
+        //
+        //     set birthday(newAge){
+        //         this.age =  newAge;
+        //     }
+        // }
+        //
+        // console.log(typeof user1.birthday);
+
+
+        //lesson-4
+
+        // var cities = [];
+        // cities["北京"] = ["朝阳","海淀","东城","西城"];
+        // cities["成都"] = ["青羊","武侯",];
+        //
+        // for(var p in cities){
+        //     console.log(p);
+        //     for(var area in cities[p]){
+        //
+        //         console.log(area);
+        //         console.log(cities[p][area]);
+        //     }
+        // }
+
+        //lesson-5
+        // function f1(){
+        //     console.log("函数1");
+        // }
+        //
+        // f1();
+        //
+        // var f2 = function(){
+        //     console.log("函数2");
+        // };
+        //
+        // f2();
+        //
+        // //callback function
+        // function f3(f, num1, num2){
+        //     f(num1, num2);
+        // }
+        //
+        // function add(num1, num2){
+        //     console.log(num1 + num2);
+        // }
+        //
+        // f3(add, 2, 3);
+        //
+        // function f4(){
+        //     function f5(){
+        //         console.log("函数4");
+        //     }
+        //     return f5;
+        // }
+        //
+        // f4()();
+        //
+        //
+        // function f5(f1, f2){
+        //     return (f1() + f2());
+        // }
+        //
+        // console.log(f5(function f1(){return 1;}, function f2(){return 2}));
+        //
+        // //IIFE: immediately invoked function expression
+        // (function(){
+        //     console.log("IIFE")
+        // })();
+        //
+        // function User(name, age){
+        //     this.name = name;
+        //     this.age = age;
+        // }
+        //
+        // var u1 = new User("zhangsan", 18);
+        // var u2 = new User("lisi", 21);
+        //
+        // console.log(u1.name + u1.age);
+        // console.log(u2.name + u2.age);
+        //
+        // function Person(){
+        //     this.name = "Tom";
+        // }
+        //
+        // var p = new Person;
+        // console.log(p.name);
+        //
+        // function People(name, age){
+        //     this.name = name;
+        //     this.age = age;
+        //     return {name : "Tom"};
+        // }
+        //
+        // var people = new People("罗葳", 33);
+        // console.log(people.name + people.age);
+        //
+        // function subtract(num1, num2){
+        //     console.log(num1 - num2);
+        // }
+        //
+        // subtract.apply(null, [5,3]);
+        // subtract.call(null, 5, 3);
+
+        //lesson-6
+        // function f6(){
+        //     var fs = [];
+        //     for(var i = 0; i < 5; i++){
+        //         fs[i] = function(){
+        //             return i;
+        //         }
+        //     }
+        //     return fs;
+        // }
+        //
+        // console.log(f6()[0]());
+        //
+        // var num1 = 1
+        // function f7(){
+        //     num2 = 2;
+        //     function swap(){
+        //         var temp = num2;
+        //         num2 = num1;
+        //         num1 = temp;
+        //     }
+        //
+        //     swap();
+        // }
+        //
+        // f7();
+        // console.log(num1);
+
+        // function f8(num){
+        //     console.log(num);
+        //     this.count++;
+        // }
+        // f8.count = 0;
+        //
+        // f8(1);
+        // f8(2);
+        // f8(3);
+        //
+        // console.log(f8.count);
+        //
+        //
+        // function f9(num){
+        //     this.f10();
+        // }
+        //
+        // function f10(){
+        //     console.log(this.num);
+        // }
+        //
+        // f9(100);
+        //
+        // function f11(){
+        //     console.log(this);
+        // }
+        //
+        // f11();
+        //
+        // function User(){
+        //     this.name="罗葳";
+        //     this.getInfo=function(){
+        //         return this.name;
+        //     }
+        // }
+        //
+        // var user = new User();
+        // console.log(user.name);
+        //
+        //
+        // var user = {
+        //     name : "罗葳",
+        //     getInfo : function(){
+        //         return this.name;
+        //     }
+        // }
+        // console.log(user.getInfo());
+        //
+        //
+        // function f11(job){
+        //     console.log(this.name + " : " + job);
+        // }
+        // f11.call(user, "程序员");
+        // f11.apply(user, ["程序员"]);
+        // var f12 = f11.bind(user);
+        // f12("程序员");
+
+        //lesson-7
+
+        // function f12(){
+        //     console.log(this.num);
+        // }
+        //
+        // var obj1 = {
+        //     num : 1,
+        //     f : f12
+        // }
+        //
+        // var obj2 = {
+        //     num : 2,
+        //     f : f12
+        // }
+        //
+        // obj1.f.call(obj2);
+        // obj2.f.call(obj1);
+
+        // function f13(num){
+        //     this.num = num;
+        // }
+
+        // var obj1 = {
+        //     f : f13
+        // }
+        //
+        // var obj2 = new obj1.f(1);
+        // console.log(obj1.num);
+        // console.log(obj2.num);
+
+        // var obj1 = {};
+        //
+        // var f14 = f13.bind(obj1);
+        // f14(1);
+        // console.log(obj1.num);
+        // var obj2 = new f14(2);
+        // console.log(obj1.num);
+        // console.log(obj2.num);
+
+        // function f15(){
+        //     console.log(this.num);
+        // }
+        //
+        // var obj1 = {
+        //     num : 1,
+        //     f : f15
+        // }
+        //
+        // obj1.f();
+        // var f2 = obj1.f;
+        // var num = 2;
+        // f2();
+
+
+        // function Person(){
+        //
+        // }
+        //
+        // console.log(Person.prototype);
+
+        //console.log(person1.__proto__ === Person.prototype);
+
+
+        // Person.prototype.name="罗葳";
+        // Person.prototype.getName=function(){
+        //     return this.name;
+        // }
+
+        // Person.prototype = {
+        //     name : "luowei",
+        //     getName : function(){
+        //         return this.name;
+        //     }
+        // }
+        //
+        // Person.name = "罗葳";
+        // Person.address = "荆州";
+        //
+        // var person1 = new Person();
+        // var person2 = new Person();
+        //
+        // console.log(person1.getName());
+        //
+        // console.log(person1);
+        // console.log(person2);
+        // console.log(person2.name + " : " + person2.address);
+        // console.log(Person.name + " : " + Person.address);
+
+        //lesson-8
+        // function Parent(){
+        //     this.name="罗葳";
+        //     this.address="荆州";
+        // }
+        //
+        // function Son(){
+        //
+        // }
+        //
+        // Son.prototype = new Parent();
+        //
+        // var son1 = new Son();
+        // var son2 = new Son();
+        //
+        // console.log(son1.name);
+        // son1.name = "luowei";
+        // console.log(son1.name);
+        // console.log(son2.name);
+
+        // function User(name){
+        //     this.name = name;
+        // }
+        //
+        // User.prototype.getName = function(){
+        //     return this.name;
+        // }
+        //
+        // User.test = function(num){
+        //     return num * 2;
+        // }
+        //
+        // var user1 = new User("lwei");
+        // console.log(user1.name);
+        // console.log(user1.getName());
+        // console.log(User.test(10));
+
+        //lesson-9
+        // console.log(NaN);
+        // console.log(escape("Hello,罗葳*@-.+/"));
+        // console.log(unescape("Hello%2C%u7F57%u8473*@-.+/"));
+        //
+        // console.log(encodeURI("http://www.baidu.com?wd=罗葳"));
+        // console.log(decodeURI("http://www.baidu.com?wd=%E7%BD%97%E8%91%B3"));
+        //
+        // console.log(encodeURIComponent("http://www.baidu.com?wd=罗葳&p=你好"));
+        // console.log(decodeURIComponent("http%3A%2F%2Fwww.baidu.com%3Fwd%3D%E7%BD%97%E8%91%B3%26p%3D%E4%BD%A0%E5%A5%BD"));
+        //
+        // var obj1 = new Object();
+        // obj1.name = "lwei";
+        // obj1.address = "荆州";
+        //
+        // var obj2 = new Object("luowei");
+        // console.log(obj2 instanceof String);
+        //
+        // var obj3 = new Object(100);
+        // console.log(obj3 instanceof Number);
+        //
+        // var obj4 = new Object(true);
+        // console.log(obj4 instanceof Boolean);
+        //
+        // console.log(obj3.constructor);
+
+        // var obj5 = new Object(null);
+        // console.log(obj5 instanceof null);
+
+        // console.log(obj1.hasOwnProperty("name"));
+
+        // var obj6 = {
+        //     id : 1,
+        //     name : "lwei"
+        // }
+        //
+        // var obj7 = Object.create(obj6, {
+        //     age:{
+        //         value:20,
+        //         writable:true,
+        //         enumerable:true
+        //     },
+        //     address:{
+        //         value:"荆州",
+        //         writable:true,
+        //         enumerable:false
+        //     }
+        // });
+        //
+        // Object.defineProperty(obj6, "sex", {value : "male", configurable : true, writable : true, enumerable : true});
+        //
+        // Object.defineProperties(obj6, {
+        //     education:{value:"bachelor", configurable:true, writable:true, enumerable:true},
+        //     Nation:{value:"American", configurable:true, writable:true, enumerable:true}
+        //     }
+        // )
+
+        // for(var p in obj6){
+        //     console.log(p);
+        // }
+        //
+        // console.log(obj6.isPrototypeOf(obj7));
+        //
+        // for(var p in obj7){
+        //     console.log(p);
+        // }
+        //
+        // console.log(Object.getOwnPropertyDescriptor(obj7, "address"));
+
+        // var pnames = Object.getOwnPropertyNames(obj6);
+        // for(var a in pnames){
+        //     console.log(pnames[a]);
+        // }
+        //
+        // console.log(Object.getPrototypeOf(obj7));
+        // console.log(Object.getPrototypeOf(obj6));
+
+        // var pnames2=Object.keys(obj7);
+        // for(var a in pnames2){
+        //     console.log(pnames2[a]);
+        // }
+
+        // var a1 = [1,2,3];
+        // var a2 = new Array();
+        //
+        // var a3 = a1.concat(4,5,6);
+        // for(var i = 0; i < a3.length; i++){
+        //     console.log(a3[i]);
+        // }
+        // for(var i = 0; i < a1.length; i++){
+        //     console.log(a1[i]);
+        // }
+        // a3 = a3.concat(7,[8,9]);
+        // for(var i = 0; i < a3.length; i++){
+        //     console.log(a3[i]);
+        // }
+        // var a4 = a1.join(":")
+        // console.log(a4);
+        // a1.reverse();
+        // for(var i = 0; i < a1.length; i++){
+        //     console.log(a1[i]);
+        // }
+        // var a5 = a3.slice(1,3);
+        // for(var i = 0; i < a5.length; i++){
+        //     console.log(a5[i]);
+        // }
+        // var a6 = a3.splice(2,2);
+        // for(var i = 0; i < a6.length; i++){
+        //     console.log(a6[i]);
+        // }
+        // for(var i = 0; i < a3.length; i++){
+        //     console.log(a3[i]);
+        // }
+        // a6 = a3.splice(1,2,"a","b","c");
+        // for(var i = 0; i < a6.length; i++){
+        //     console.log(a6[i]);
+        // }
+        // for(var i = 0; i < a3.length; i++){
+        //     console.log(a3[i]);
+        // }
+        // var a7 = [1,2,3,4,5,6,7,8];
+        //
+        // a7.sort(function(a,b){
+        //     if(a < b)
+        //         return 1;
+        //     else if(a > b)
+        //         return -1;
+        //     else
+        //         return 0;
+        // });
+
+        // a7.pop();
+        //
+        // a7.push(8);
+        //
+        // for(var i = 0; i < a7.length; i++){
+        //     console.log(a7[i]);
+        // }
+
+        // a7.shift();
+        // for(var i = 0; i < a7.length; i++){
+        //     console.log(a7[i]);
+        // }
+
+        // a7.unshift(8);
+        // for(var i = 0; i < a7.length; i++){
+        //     console.log(a7[i]);
+        // }
+
+        // a7.pop();
+        //
+        // a7.push(1);
+        // console.log(a7);
+
+        // a7.forEach(function(e, index, a){
+        //     console.log(e + ", " + index + ", " + a);
+        // })
+        //
+        // var a8 = [2,4,6];
+        // console.log(a8.every(function(e){
+        //     return e % 2 == 0;
+        // }));
+        // console.log(a8.some(function(e){
+        //     return e > 6;
+        // }));
+        //
+        // var a9 = a8.filter(function(e){
+        //     return e % 2 == 0;
+        // });
+        // console.log(a9);
+        //
+        // var a10 = a8.map(function(e){
+        //     return e * 10;
+        // })
+        // console.log(a10);
+        //
+        // var sum = a10.reduce(function(x,y){
+        //     return x + y;
+        // })
+
+        //lesson-10
+        var num1 = 10;
+        var num2 = 12.34;
+        var num3 = new Number(10);
+        var num4 = new Number("123");
+
+        console.log(typeof num4);
+        console.log(num4 instanceof Number);
+
+        console.log(Number.MAX_VALUE);
+        console.log(Number.MIN_VALUE);
+        console.log(Number.NEGATIVE_INFINITY);
+        console.log(Number.POSITIVE_INFINITY);
+
+        var f1 = new Function("num1", "num2", "return num1 + num2");
+        console.log(f1(1, 2));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
