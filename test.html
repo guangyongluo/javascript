@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Document</title>
+    <script type="application/javascript">
+        function getByClassName(ClassName){
+            if(document.getElementsByClassName){
+                return document.getElementsByClassName(ClassName);
+            }else{
+                var aEle=document.getElementsByTagName('*');
+                var arr=[];
+                for(var i=0;i<aEle.length;i++){
+                    if(aEle[i].className==ClassName){
+                        arr.push(aEle[i])
+                    }
+                }
+                return arr;
+            }
+        }
+
+        function parent(e, n){
+            if(n === undefined) n = 1;
+            while(n-- && e) e = e.parentNode;
+            if(!e || e.nodeType !== 1) return null;
+            return e;
+        }
+
+    </script>
+</head>
+<body>
+    <h1 class="apple banana">An HTML Document</h1>
+    <p class="apple">This is a <i class="banana">simple</i> document.</p>
+</body>
+
+<script type="application/javascript">
+
+    var elements =  getByClassName("apple");
+    console.log(elements[1].innerText);
+
+    // var pElements = document.getElementsByTagName("p");
+    // console.log(pElements);
+</script>
+</html>

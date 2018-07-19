@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset= 'utf-8'>
+    <title>HTML5自由者——innerHTML、outerHTML和innerText、outerHTML的区别</title>
+    <script language="JavaScript" type="text/javascript">
+        //.innerHTML
+        function innerHTMLDemo()
+        {
+            test_id1.innerHTML="<font size=9pt color=red><i><u>设置或获取对象及其内容的 HTML 形式.</u></i></font>";
+        }
+        //.innerText
+        function innerTextDemo()
+        {
+            test_id2.innerText="<font size=9pt color=red><i><u>设置或获取对象及其内容的 HTML 形式.</u></i></font>";
+        }
+        //.outerHTML
+        function outerHTMLDemo()
+        {
+            test_id3.outerHTML="<font size=9pt color=red><i><u>设置或获取对象及其内容的 HTML 形式.</u></i></font>";
+        }
+        //.outerText
+        function outerTextDemo()
+        {
+            test_id4.outerText="<font size=9pt color=red><i><u>设置或获取对象及其内容的 HTML 形式.</u></i></font>";
+        }
+    </script>
+</head>
+<body>
+　<ul>
+    　  <li id="test_id1" onclick="innerHTMLDemo()">innerHTML效果.</li>
+    　  <li id="test_id2" onclick="innerTextDemo()">innerText效果.</li>
+    　　<li id="test_id3" onclick="outerHTMLDemo()">outerHTML效果.</li>
+    　　<li id="test_id4" onclick="outerTextDemo()">outerText效果.</li>
+    　</ul>
+</body>
+</html>
