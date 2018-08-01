@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mouse event</title>
+    <script src="mytools/getScrollOffsets.js"/></script>
+    <script src="mytools/Drag.js"></script>
+</head>
+<body>
+    <div style="position: absolute; left: 100px; top: 100px; width: 250px; background-color: white; border: solid black;">
+
+        <div style="background-color: gray; border-bottom: dotted black; padding: 3px; font-family: sans-serif; font-weight: bold;" onmousedown="drag(this.parentNode, event);">
+            拖动我
+        </div>
+
+        <p>这是一个测试，测试中，测试中，测试中。</p><p>测试</p><p>测试</p>
+    </div>
+</body>
+</html>
