@@ -34,6 +34,7 @@ function enclose(content, framewidth, frameheight, contentX, contentY) {
     var isMacWebkit = (navigator.userAgent.indexOf("Macintosh") !== -1 &&
                        navigator.userAgent.indexOf("WebKit") !== -1);
     var isFirefox = (navigator.userAgent.indexOf("Gecko") !== -1);
+    var isChrome = (navigator.userAgent.indexOf("Chrome") !== -1);
 
     // Register mousewheel event handlers.
     frame.onwheel = wheelHandler;       // Future browsers
@@ -54,7 +55,7 @@ function enclose(content, framewidth, frameheight, contentX, contentY) {
         var deltaX = e.deltaX*-30 ||  // wheel event
                   e.wheelDeltaX/4 ||  // mousewheel
                                 0;    // property not defined
-        var deltaY = e.deltaY*-30 ||  // wheel event
+        var deltaY = e.deltaY*30 ||  // wheel event
                   e.wheelDeltaY/4 ||  // mousewheel event in Webkit
    (e.wheelDeltaY===undefined &&      // if there is no 2D property then 
                   e.wheelDelta/4) ||  // use the 1D wheel property
@@ -68,6 +69,11 @@ function enclose(content, framewidth, frameheight, contentX, contentY) {
         if (isMacWebkit) {
             deltaX /= 30;
             deltaY /= 30;
+        }
+
+        if(isChrome) {
+            deltaX /= 100;
+            deltaY /= 100;
         }
 
         // If we ever get a mousewheel or wheel event in (a future version of)
@@ -104,10 +110,11 @@ function enclose(content, framewidth, frameheight, contentX, contentY) {
                 content.style.left = contentX + "px"; // Set new offset
             }
             if (deltaY) {
-                var minoffset = Math.min(frameheight - contentheight, 0);
+                var minoffset = Math.max(frameheight - contentheight, 0);
                 // Add deltaY to contentY, but don't go lower than minoffset
-                contentY = Math.max(contentY + deltaY, minoffset);
-                contentY = Math.min(contentY, 0);     // Or higher than 0
+                contentY = Math.min(contentY + deltaY, minoffset);
+                if(contentY <= 0)
+                    contentY = 0;
                 content.style.top = contentY + "px";  // Set the new offset.
             }
         }
