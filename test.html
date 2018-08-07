@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Sample Document</title>
+    <!--
+    <script src="mytools/Keymap.js"></script>
+    <script src="mytools/postMessage.js"></script>
+    -->
     <script type="application/javascript">
         function getByClassName(ClassName){
             if(document.getElementsByClassName){
@@ -24,6 +28,45 @@
             while(n-- && e) e = e.parentNode;
             if(!e || e.nodeType !== 1) return null;
             return e;
+        }
+
+        function getText(url) {
+            var request = new XMLHttpRequest();         // Create new request
+            request.open("GET", url);                   // Specify URL to fetch
+            request.onreadystatechange = function() {   // Define event listener
+                // If the request is compete and was successful
+                if (request.readyState === 4 && request.status === 200) {
+                    var type = request.getResponseHeader("Content-Type");
+                    if (type.match(/^text/))            // Make sure response is text
+                        console.log(request.responseText); // Pass it to callback
+                }
+            };
+            request.send(null);                         // Send the request now
+        }
+
+        function getText(url, callback) {
+            var request = new XMLHttpRequest();         // Create new request
+            request.open("GET", url);                   // Specify URL to fetch
+            request.onreadystatechange = function() {   // Define event listener
+                // If the request is compete and was successful
+                if (request.readyState === 4 && request.status === 200) {
+                    var type = request.getResponseHeader("Content-Type");
+                    if (type.match(/^text/))            // Make sure response is text
+                        callback(request.responseText); // Pass it to callback
+                }
+            };
+            request.send(null);                         // Send the request now
+        }
+
+        function postMessage(msg) {
+            var request = new XMLHttpRequest();      // New request
+            request.open("GET", "http://localhost:8080/springmvc/test.html", false);        // POST to a server-side script
+            // Send the message, in plain-text, as the request body
+            request.setRequestHeader("Content-Type", // Request body will be plain text
+                "text/plain;charset=UTF-8");
+            request.send(msg);                       // Send msg as the request body
+            // The request is done. We ignore any response or any error.
+            console.log(request.responseXML);
         }
 
     </script>
@@ -50,64 +93,80 @@
 
 <script type="application/javascript">
 
-    var elements =  getByClassName("apple");
-    console.log(elements[1].innerText);
+    // var elements =  getByClassName("apple");
+    // console.log(elements[1].innerText);
+    //
+    // // var pElements = document.getElementsByTagName("p");
+    // // console.log(pElements);
+    //
+    // var select = document.forms.city.elements.selectedCity
+    // console.log(select);
+    //
+    //
+    // var whenReady = (function() { // This function returns the whenReady() function
+    //     var funcs = [];    // The functions to run when we get an event
+    //     var ready = false; // Switches to true when the handler is triggered
+    //
+    //     // The event handler invoked when the document becomes ready
+    //     function handler(e) {
+    //         // If we've already run once, just return
+    //         if (ready) return;
+    //
+    //         // If this was a readystatechange event where the state changed to
+    //         // something other than "complete", then we're not ready yet
+    //         if (e.type === "readystatechange" && document.readyState !== "complete")
+    //             return;
+    //
+    //         // Run all registered functions.
+    //         // Note that we look up funcs.length each time, in case calling
+    //         // one of these functions causes more functions to be registered.
+    //         for(var i = 0; i < funcs.length; i++)
+    //             funcs[i].call(document);
+    //
+    //         // Now set the ready flag to true and forget the functions
+    //         ready = true;
+    //         funcs = null;
+    //     }
+    //
+    //     // Register the handler for any event we might receive
+    //     if (document.addEventListener) {
+    //         document.addEventListener("DOMContentLoaded", handler, false);
+    //         document.addEventListener("readystatechange", handler, false);
+    //         window.addEventListener("load", handler, false);
+    //     }
+    //     else if (document.attachEvent) {
+    //         document.attachEvent("onreadystatechange", handler);
+    //         window.attachEvent("onload", handler);
+    //     }
+    //
+    //     // Return the whenReady function
+    //     return function whenReady(f) {
+    //         if (ready) f.call(document); // If already ready, just run it
+    //         else funcs.push(f);          // Otherwise, queue it for later.
+    //     }
+    // }());
+    //
+    // whenReady(function(){console.log("f1")});
+    // whenReady(function(){console.log("f2")});
+    // whenReady(function(){console.log("f3")});
+    // whenReady(function(){console.log("f4")});
+    // whenReady(function(){console.log("f5")});
 
-    // var pElements = document.getElementsByTagName("p");
-    // console.log(pElements);
+    // var bindings = {
+    //     A : function(){ window.alert("A")},
+    //     B : function(){ window.alert("B")},
+    //     C : function(){ window.alert("C")},
+    //     D : function(){ window.alert("D")},
+    //     E : function(){ window.alert("E")}
+    // }
+    //
+    // var keymap = new Keymap(bindings);
+    //
+    // keymap.install(document);
 
-    var select = document.forms.city.elements.selectedCity
-    console.log(select);
+    //getText("http://localhost:8080/springmvc/test.html");
 
-
-    var whenReady = (function() { // This function returns the whenReady() function
-        var funcs = [];    // The functions to run when we get an event
-        var ready = false; // Switches to true when the handler is triggered
-
-        // The event handler invoked when the document becomes ready
-        function handler(e) {
-            // If we've already run once, just return
-            if (ready) return;
-
-            // If this was a readystatechange event where the state changed to
-            // something other than "complete", then we're not ready yet
-            if (e.type === "readystatechange" && document.readyState !== "complete")
-                return;
-
-            // Run all registered functions.
-            // Note that we look up funcs.length each time, in case calling
-            // one of these functions causes more functions to be registered.
-            for(var i = 0; i < funcs.length; i++)
-                funcs[i].call(document);
-
-            // Now set the ready flag to true and forget the functions
-            ready = true;
-            funcs = null;
-        }
-
-        // Register the handler for any event we might receive
-        if (document.addEventListener) {
-            document.addEventListener("DOMContentLoaded", handler, false);
-            document.addEventListener("readystatechange", handler, false);
-            window.addEventListener("load", handler, false);
-        }
-        else if (document.attachEvent) {
-            document.attachEvent("onreadystatechange", handler);
-            window.attachEvent("onload", handler);
-        }
-
-        // Return the whenReady function
-        return function whenReady(f) {
-            if (ready) f.call(document); // If already ready, just run it
-            else funcs.push(f);          // Otherwise, queue it for later.
-        }
-    }());
-
-    whenReady(function(){console.log("f1")});
-    whenReady(function(){console.log("f2")});
-    whenReady(function(){console.log("f3")});
-    whenReady(function(){console.log("f4")});
-    whenReady(function(){console.log("f5")});
+    postMessage(null);
 
 </script>
 </html>

@@ -662,18 +662,26 @@
         // console.log(r.id + ", " + r.name);
 
 
-        var o = {id : 1, name : "lwei"};
-        var s = JSON.stringify(o);
-        console.log(s);
-        s = JSON.stringify(o, ["id"]);
-        console.log(s);
-        s = JSON.stringify(o, function(k,v){
-            if(k == "")
-                return v;
-            else
-                return v + "test";
-        })
-        console.log(s);
+        // var o = {id : 1, name : "lwei"};
+        // var s = JSON.stringify(o);
+        // console.log(s);
+        // s = JSON.stringify(o, ["id"]);
+        // console.log(s);
+        // s = JSON.stringify(o, function(k,v){
+        //     if(k == "")
+        //         return v;
+        //     else
+        //         return v + "test";
+        // })
+        // console.log(s);
+
+        var num = new Number(10);
+        for(var attr in num){
+            console.log(attr);
+
+        }
+
+        console.log(Object.getOwnPropertyNames(num));
     </script>
 </head>
 <body>
