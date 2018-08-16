@@ -8,7 +8,7 @@
     <script src="mytools/postMessage.js"></script>
     <script src="mytools/getJSONP.js"></script>
     -->
-
+    <script src="mytools/PieChart.js"></script>
     <script type="application/javascript">
         function getByClassName(ClassName){
             if(document.getElementsByClassName){
@@ -111,22 +111,29 @@
 
     </script>
 </head>
-<body>
-    <div id="editor" contenteditable>
-        Click to edit
-    </div>
+<body onload="document.body.appendChild(
+    pieChart([1.25, 2, 3, 5],
+              1200, 1000, 200, 300, 100,
+              ['red', 'green', 'yellow', 'bule'],
+              ['North', 'South', 'East','West'], 400, 250));
+    ">
+    <!--<div id="editor" contenteditable>-->
+        <!--Click to edit-->
+    <!--</div>-->
 
-    <h1 class="apple banana">An HTML Document</h1>
-    <p class="apple">This is a <i class="banana">simple</i> document.</p>
+    <!--<h1 class="apple banana">An HTML Document</h1>-->
+    <!--<p class="apple">This is a <i class="banana">simple</i> document.</p>-->
 
-    <form name="city">
-        <label>请选择你所在的城市：
-            <select name="selectedCity" multiple="true" size="2">
-                <option name="city" value="suzhou">苏州</option>
-                <option name="city" value="jingzhou">荆州</option>
-            </select>
-        </label>
-    </form>
+    <!--<form name="city">-->
+        <!--<label>请选择你所在的城市：-->
+            <!--<select name="selectedCity" multiple="true" size="2">-->
+                <!--<option name="city" value="suzhou">苏州</option>-->
+                <!--<option name="city" value="jingzhou">荆州</option>-->
+            <!--</select>-->
+        <!--</label>-->
+    <!--</form>-->
+
+    <!--<img src="images/clock-icon.png" onmouseover="this.src='images/test.jpg'" onmouseout="this.src='images/clock-icon.png'">-->
 
 
 </body>
@@ -210,16 +217,17 @@
 
     //getJSONP("http://localhost:8080/springmvc/response",getJSONP);
 
-    function setCookie(name, value, daysToLive){
-        var cookie = name + "=" + encodeURIComponent(value);
-        if(typeof daysToLive === "number")
-            cookie += "; max-age=" + (daysToLive*60*60*24);
-        document.cookie = cookie;
-    }
+    // function setCookie(name, value, daysToLive){
+    //     var cookie = name + "=" + encodeURIComponent(value);
+    //     if(typeof daysToLive === "number")
+    //         cookie += "; max-age=" + (daysToLive*60*60*24);
+    //     document.cookie = cookie;
+    // }
+    //
+    // setCookie("name", "lwei", 1);
+    // setCookie("age", 32, 1);
+    //
+    // console.log(document.cookie);
 
-    setCookie("name", "lwei", 1);
-    setCookie("age", 32, 1);
-
-    console.log(document.cookie);
 </script>
 </html>
