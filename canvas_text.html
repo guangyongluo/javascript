@@ -3,18 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="mytools/polygons.js"></script>
+    <script src="mytools/koch.js"></script>
+    <script type="application/javascript">
+        function rads(x) { return Math.PI*x/180; }
+    </script>
 </head>
 <body>
     <canvas id="my_canvas_01"></canvas>
 </body>
 <script type="application/javascript">
     var canvas = document.getElementById("my_canvas_01");
+    canvas.setAttribute("width","1000");
+    canvas.setAttribute("height", "600");
     var c = canvas.getContext('2d');
     c.beginPath();
-    c.moveTo(100, 100);
-    c.lineTo(200, 200);
-    c.lineTo(100, 200);
+    // c.moveTo(100, 100);
+    // c.lineTo(200, 200);
+    // c.lineTo(100, 200);
+    //
+    // c.moveTo(300, 100);
+    // c.lineTo(300, 200);
+    // snowflake(c,0,5,115,125);
+    //snowflake(c,4,200,115,125);
     //c.fill();
+    // polygon(c, 6, 200, 200, 50, Math.PI/6);
+    // polygon(c, 4, 200, 200, 20, Math.PI/4, true);
+    // c.fillStyle = "#ccc";
+    // c.strokeStyle = "#008";
+    // c.lineWidth = 5;
+    //polygon(c, 5, 255, 55, 50);
+    // c.fill();
+
+    // c.arc(75,100,50,0,rads(360),false);          // Center at (75,100), radius 50
+    // Go clockwise from 0 to 360 degrees
+
+    // Draw a wedge. Angles are measured clockwise from the positive x axis.
+    // Note that arc() adds a line from the current point to the arc start.
+    // c.moveTo(200, 100);       // Start at the center of the circle
+    // c.arc(200, 100, 50,       // Circle center and radius
+    //     rads(-60), rads(0), // start at angle -60 and go to angle 0
+    //     false);             // false means clockwise
+    // c.closePath();            // Add radius back to the center of the circle
+
+    // Same wedge, opposite direction
+    // c.moveTo(325, 100);
+    // c.arc(325, 100, 50, rads(-60), rads(0), true); // counterclockwise
+    // c.closePath();
+
+    // Use arcTo() for rounded corners. Here we draw a square with
+    // upper left corner at (400,50) and corners of varying radii.
+    // c.moveTo(450, 50);           // Begin in the middle of the top edge.
+    // c.arcTo(500,50,500,150,30);  // Add part of top edge and upper right corner.
+    // c.arcTo(500,150,400,150,20); // Add right edge and lower right corner.
+    // c.arcTo(400,150,400,50,10);  // Add bottom edge and lower left corner.
+    // c.arcTo(400,50,500,50,0);    // Add left edge and upper left corner.
+    // c.closePath();               // Close path to add the rest of the top edge.
+
+
+    // Quadratic Bezier curve: one control point
+    // c.moveTo(75, 250);                      // Begin at (75,250)
+    // c.quadraticCurveTo(100,200, 175, 250);  // Curve to (175,250)
+    // c.fillRect(100-3,200-3,6,6);            // Mark the control point (100,200)
+
+    // Cubic Bezier curve
+    // c.moveTo(200, 250);                       // Start at (200,250)
+    // c.bezierCurveTo(220,220,280,280,300,250); // Curve to (300,250)
+    // c.fillRect(220-3,220-3,6,6);              // Mark control points
+    // c.fillRect(280-3,280-3,6,6);
+
+    // Define some graphics attributes and draw the curves
+    // c.fillStyle = "#aaa";  // Gray fills
+    // c.lineWidth = 5;       // 5-pixel black (by default) lines
+
+    // var bgfade = c.createLinearGradient(0,0,canvas.width,canvas.height);
+    // bgfade.addColorStop(0.0, "#88f");
+    // bgfade.addColorStop(1.0, "#fff");
+    //
+    // var offscreen = document.createElement("canvas");
+    // offscreen.width = offscreen.height = 10;
+    // offscreen.getContext("2d").strokeRect(0,0,6,6);
+    // var pattern = c.createPattern(offscreen, "repeat");
+    //
+    // var peekhole = c.createRadialGradient(300,300,100, 300,300,300);
+    // peekhole.addColorStop(0.0, "transparent");
+    // peekhole.addColorStop(0.7, "rgba(100,100,100,0.9)");
+    // peekhole.addColorStop(1.0, "rgba(0,0,0,0)");
+    //
+    // c.fillStyle = bgfade;
+    // c.fillRect(0,0,600,600);
+    //
+    // c.strokeStyle = pattern;
+    // c.lineWidth = 100;
+    // c.strokeRect(100,100,400,400);
+    //
+    // c.fillStyle = peekhole;
+    // c.fillRect(0,0,600,600);
+
+    // c.fill();              // Fill the curves
+    // c.stroke();
+
+    // c.font = "bold 60pt sans-serif";
+    // c.lineWidth = 2;
+    // c.strokeStyle = "#000";
+    //
+    // c.strokeRect(175, 25, 50, 325);
+    // c.strokeText("<canvas>", 15, 330);
+    //
+    // polygon(c, 3, 200, 225, 200);
+    // polygon(c, 3, 200, 225, 100, 0, true);
+    //
+    // c.clip();
+    //
+    // c.lineWidth = 10;
+    // c.stroke();
+    //
+    // c.fillStyle = "#aaa";
+    // c.fillRect(175, 25, 50, 325);
+    //
+    // c.fillStyle = "#888";
+    // c.fillText("<canvas>", 15, 330);
+
+    // c.shadowColor = "rgba(100,100,100,.4)"; // Translucent gray
+    // c.shadowOffsetX = c.shadowOffsetY = 3;  // Shadow offset to lower right
+    // c.shadowBlur = 5;                       // Soften shadow edges
+    //
+    // // Draw some text in a blue box using that shadow
+    // c.lineWidth = 10;
+    // c.strokeStyle = "blue";
+    // c.strokeRect(100, 100, 300, 200);       // Draw a rectangle
+    // c.font = "Bold 36pt Helvetica";
+    // c.fillText("Hello World", 115, 225);    // Draw some text
+    //
+    // // Define a less subtle shadow. A larger offset makes items "float" higher.
+    // // Note how the transparent shadow overlaps the blue box.
+    // c.shadowOffsetX = c.shadowOffsetY = 20;
+    // c.shadowBlur = 10;
+    // c.fillStyle = "red";                    // Draw a solid red rectangle
+    // c.fillRect(50,25,200,65);
+
+    c.moveTo(5,5);
+    c.lineTo(45,45);
+    c.lineWidth = 8;
+    c.lineCap = "round";
     c.stroke();
+
+    c.translate(50,100);
+    c.rotate(-45 * Math.PI / 180);
+    c.scale(10,10);
+
+    c.drawImage(c.canvas, 0, 0, 50, 50, 0, 0 ,50, 50);
 </script>
 </html>
