@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="mytools/smear.js"></script>
+</head>
+<body>
+    <img src="images/clock-icon.png" >
+
+    <!--<span id="test"></span>-->
+    <!--<script>-->
+        <!--function place(e) {-->
+            <!--var x = e.clientX;-->
+            <!--var y = e.clientY;-->
+            <!--document.getElementById('test').innerHTML = "X-" + x + " Y-" + y + "";-->
+        <!--}-->
+    <!--</script>-->
+</body>
+<script type="application/javascript">
+    var img = document.getElementsByTagName("img").item(0);
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    var c = canvas.getContext("2d");
+    c.drawImage(img, 0, 0);
+    var pixels = c.getImageData(0, 0, img.width, img.height);
+
+    var width = pixels.width, height = pixels.height;
+
+    var data = pixels.data;
+    var n = 100;
+    var m = n - 1;
+
+    for(var row = 0; row < height; row++) {  // For each row
+        var i = row*width*4 + 4;  // The offset of the second pixel of the row
+        for(var col = 1; col < width; col++, i += 4) { // For each column
+            data[i] =   (data[i] + data[i-4]*m)/n;     // Red pixel component
+            data[i+1] = (data[i+1] + data[i-3]*m)/n;   // Green
+            data[i+2] = (data[i+2] + data[i-2]*m)/n;   // Blue
+            data[i+3] = (data[i+3] + data[i-1]*m)/n;   // Alpha component
+        }
+    }
+
+    c.putImageData(pixels, 0, 0);
+
+    document.getElementsByTagName("body").item(0).appendChild(canvas);
+</script>
+</html>
