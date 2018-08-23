@@ -12,7 +12,7 @@ function smear(img) {
     var pixels = context.getImageData(0,0,img.width,img.height)
 
     // Send the pixels to a worker thread
-    var worker = new Worker("SmearWorker.js");      // Create worker
+    var worker = new Worker("mytools/SmearWorker.js");      // Create worker
     worker.postMessage(pixels);                     // Copy and send pixels
 
     // Register a handler to get the worker's response

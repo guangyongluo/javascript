@@ -1,10 +1,10 @@
 // Get an ImageData object from the main thread, process it, send it back
-onmessage = function(e) { postMessage(smear(e.data)); }
+onmessage = function(e) { postMessage(smear2(e.data)); }
 
 // Smear the ImageData pixels to the right, producing a motion blur.
 // For large images, this function does a lot of computation and would
 // cause UI responsiveness issues if it was used on the main thread.
-function smear(pixels) {
+function smear2(pixels) {
     var data = pixels.data, width = pixels.width, height = pixels.height;
     var n = 10, m = n-1;  // Make n bigger for more smearing
     for(var row = 0; row < height; row++) {            // For each row
