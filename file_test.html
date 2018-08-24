@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        function fileInfo(files){
+            for(var i = 0; i < files.length; i++){
+                var f = files[i];
+                console.log(f.name, f.size, f.type, f.lastModifiedDate);
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    <input type="file" accept="image/*" multiple onchange="fileInfo(this.files)" />
+</body>
+</html>
