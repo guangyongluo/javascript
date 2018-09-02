@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        function test(e){
+            console.log(e);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" id="btn01" value="按钮1" onclick="test(e)"/>
+    <input type="button" id="btn02" value="按钮2" />
+    <input type="button" id="btn03" value="按钮3" />
+
+    <script type="application/javascript">
+        //var btn01 = document.getElementById("btn01");
+        var btn02 = document.getElementById("btn02");
+        var btn03 = document.getElementById("btn03");
+
+        btn02.onclick = function(e){
+            console.log("test02");
+            test(e);
+        };
+
+        btn03.addEventListener("click", function (e) {
+            console.log("test03");
+            test(e);
+        });
+
+
+    </script>
+</body>
+</html>

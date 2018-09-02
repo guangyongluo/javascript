@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" id="btn01" value="按钮1" onclick="alert(1)"/>
+
+    <script type="application/javascript">
+        document.getElementById("btn01").onclick = function(){alert(2);};
+        document.getElementById("btn01").addEventListener("click", function(){
+            alert(3);
+        });
+    </script>
+</body>
+</html>

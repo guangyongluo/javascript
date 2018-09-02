@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        function test(){alert("test")}
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮" onclick="test()">
+    <input type="button" id="button01" value="button">
+    <input type="button" id="button02" value="cancel">
+    <input type="button" id="button03" value="addEvent">
+    <input type="button" id="button04" value="deleteEvent">
+    <script type="application/javascript">
+        function f() {
+            alert("test_event_listen");
+        }
+        var button1 = document.getElementById("button01");
+        button1.onclick = function(){alert("test_test");};
+        var button2 = document.getElementById("button02");
+        button2.onclick = function(){button1.onclick = null;};
+        var button3 = document.getElementById("button03");
+        button3.addEventListener("click", f);
+        var button4 = document.getElementById("button04");
+        button4.addEventListener("click",function(){button3.removeEventListener("click", f)});
+    </script>
+</body>
+</html>
