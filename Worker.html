@@ -8,5 +8,21 @@
 </head>
 <body>
     <img src="images/clock-icon.png" onclick="smear(this)">
+
+    <div id="my_div"></div>
+
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+
+    <script>
+        $('#my_div').data('data-myData','luowei');
+        console.log($('#my_div').data('data-myData'));
+        $('#my_div').attr('value01','hello');
+        console.log($('#my_div').attr('value01'));
+        console.log($('#my_div').data('value01'));
+        $('#my_div').removeData('data-myData');
+        console.log($('#my_div').data('data-myData'));
+        $('#my_div').attr('data-value02',"world");
+        console.log($('#my_div').data('data-value02'));
+    </script>
 </body>
 </html>
