@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>replaces elements - jQuery in Action, 3rd edition</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <img src="images/source1.png"  alt="A Dog" />
+    <img src="images/source2.png" alt="A Pork Chop" />
+    <img src="images/source3.png" />
+
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+    <script type="application/javascript">
+        var $imgElements = $('img:not([alt])');
+        $('img[alt]').each(function (){
+            var $deleteElements = $(this).replaceWith('<span>' + $(this).attr('alt') + '</span>');
+            $imgElements.after($deleteElements);
+        });
+
+    </script>
+
+</body>
+</html>
