@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="http://www.baidu.com" method="post" id="form01">
+        <input type="text" name="" id="username" value="lwei"/>
+        <input type="text" id="focus" value="123456" />
+        <input type="submit" value="提交">
+        <input type="reset" value="重置">
+        <select id="num">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </form>
+    <script type="application/javascript">
+        var form01 = document.getElementById("form01");
+        form01.addEventListener("submit", function (event) {
+            // return false;
+            event.preventDefault();
+        });
+        form01.addEventListener("reset", function (event) {
+            // return false;
+            event.preventDefault();
+        });
+        var username = document.getElementById("username");
+        username.addEventListener("change", function(){
+            console.log(username.value);
+        });
+        var num = document.getElementById("num");
+        num.addEventListener("change", function () {
+            console.log(num.value);
+        });
+        var focus = document.getElementById("focus");
+        focus.addEventListener("focus", function () {
+            console.log("focus");
+        });
+        focus.addEventListener("blur", function () {
+            console.log("blur");
+            console.log(focus.value);
+        })
+    </script>
+</body>
+</html>
