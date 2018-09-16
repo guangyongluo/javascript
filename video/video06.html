@@ -5,22 +5,59 @@
     <title>Title</title>
     <style type="text/css">
         body {height: 1500px}
+        #phase01 {
+            width: 200px;
+            height: 200px;
+            border: red 1px solid;
+        }
     </style>
     <script type="application/javascript">
         window.addEventListener("scroll",function () {
             console.log("test");
         });
 
-        window.addEventListener("load", function () {
-            alert("test");
+        // window.addEventListener("load", function () {
+        //     alert("test");
+        // })
+
+        // window.addEventListener("click", function () {
+        //     alert("test");
+        // })
+
+
+        // window.addEventListener("contextmenu", function (e) {
+        //     alert("contextmenu");
+        //     e.preventDefault();
+        // })
+
+        // var button = document.getElementById("bnt");
+        // button.addEventListener("contextmenu", function () {
+        //     alert("contextmenu");
+        // })
+
+        // window.addEventListener("load", function () {
+        //     var square = document.getElementById("phase01");
+        //     square.addEventListener("mouseover", function () {
+        //         alert("mouseover");
+        //     });
+        //
+        // });
+
+        window.addEventListener("load", function (e) {
+            document.getElementById("text").addEventListener("keypress", function (e) {
+                if(e.keyCode == 13){
+                    e.srcElement.nextElementSibling.focus();
+                }
+            })
         })
 
-        window.addEventListener("click", function () {
-            alert("test");
-        })
     </script>
 </head>
 <body>
+    <input id="text" type="text" />
+    <input id="pwd" type="password" />
     <input id="bnt" type="button" value="按钮"></input>
+
+    <div id="phase01"></div>
 </body>
 </html>
