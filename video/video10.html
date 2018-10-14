@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="checkbox" name="sports" />足球
+    <input type="checkbox" name="sports" />篮球
+    <input type="checkbox" name="sports" />排球
+
+    <input type="text" data-mydata="data" name="" id="username" value="lwei" readonly="true"/>
+
+    <button id="btn1">按钮1</button>
+    <button id="btn2">按钮2</button>
+
+<script type="application/javascript">
+    // var sports = document.getElementsByName("sports");
+    // alert(sports.length);
+    // var sprotsTags = document.getElementsByTagName("input");
+    // alert(sprotsTags);
+
+    // var username = document.getElementById("username");
+    // alert(username.getAttribute("type"));
+    // alert(username.getAttribute("readonly"));
+    //
+    // username.setAttribute("type", "radio");
+    // alert(username.hasAttribute("readonly"));
+    // username.removeAttribute("readonly");
+
+    // var attrs = username.attributes;
+    //
+    // for(var i = 0; i < attrs.length; i++){
+    //     alert(attrs[i].nodeName + " - " + attrs[i].nodeValue);
+    // }
+
+    // alert(username.id);
+    // alert(username.readOnly);
+
+    // document.getElementById("btn1").addEventListener("click", function () {
+    //     alert(username.value);
+    // })
+    //
+    // document.getElementById("btn2").addEventListener("click", function () {
+    //     username.setAttribute("value", "罗葳");
+    // })
+
+    alert(username.getAttribute("data-mydata"));
+
+    alert(username.dataset.mydata);
+
+    delete username.dataset.mydata;
+
+</script>
+</body>
+</html>
