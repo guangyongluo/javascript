@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div1">
+        <p>段落1</p>
+        <p>段落2</p>
+
+        <script>
+            var num = 1;
+        </script>
+    </div>
+
+    <div id="parent">
+        <ul id="name">
+            <li>Tom</li>
+            <li>Jack</li>
+            <li>Rose</li>
+        </ul>
+    </div>
+
+    <div id="div3"></div>
+
+    <div id="div2">
+        <button id="createul">创建无序列表</button>
+        <button id="createli">创建列表项</button>
+        <button id="insertli">添加列表项</button>
+        <button id="replaceli">替换列表项</button>
+        <button id="deleteli">删除列表项</button>
+    </div>
+
+<script type="application/javascript">
+
+    // alert(document.getElementById("div1").innerText);
+
+    var div = document.getElementById("parent");
+    // var children = div.childNodes;
+    // for(var i = 0; i < children.length; i++){
+    //     alert(children[i]);
+    // }
+
+    // var children = div.children;
+    // for(var i = 0; i < children.length; i++){
+    //     alert(children.length);
+    // }
+
+    var createul = document.getElementById("createul");
+    createul.addEventListener("click", function () {
+        var newUL = document.createElement("ul");
+        var newLI1 = document.createElement("li");
+        var newLI2 = document.createElement("li");
+
+        var textNode1 = document.createTextNode("Tom");
+        var textNode2 = document.createTextNode("Jack");
+
+        newLI1.appendChild(textNode1);
+        newLI2.appendChild(textNode2);
+
+        newUL.appendChild(newLI1);
+        newUL.appendChild(newLI2);
+
+        document.getElementById("div3").appendChild(newUL);
+    });
+
+    var insertli = document.getElementById("insertli");
+    insertli.addEventListener("click", function () {
+        var newLI1 = document.createElement("li");
+        var textNode1 = document.createTextNode("Rose");
+
+        newLI1.appendChild(textNode1);
+
+
+        document.getElementById("div3").children.item(0).insertBefore(newLI1,document.getElementById("div3").children.item(0).children.item(0));
+    });
+
+    var createli = document.getElementById("createli");
+    createli.addEventListener("click", function () {
+        var newLI1 = document.createElement("li");
+        var textNode1 = document.createTextNode("Rose");
+
+        newLI1.appendChild(textNode1);
+
+
+        document.getElementById("div3").children.item(0).appendChild(newLI1);
+    });
+
+    var replaceli = document.getElementById("replaceli");
+    replaceli.addEventListener("click", function () {
+        var newLI1 = document.createElement("li");
+        var textNode1 = document.createTextNode("lwei");
+
+        newLI1.appendChild(textNode1);
+
+
+        document.getElementById("div3").children.item(0).replaceChild(newLI1,document.getElementById("div3").children.item(0).children.item(0));
+    });
+
+
+    var deleteli = document.getElementById("deleteli");
+    deleteli.addEventListener("click", function () {
+
+        document.getElementById("div3").children.item(0).removeChild(document.getElementById("div3").children.item(0).children.item(0));
+    });
+</script>
+</body>
+</html>
