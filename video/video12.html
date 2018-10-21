@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="http://www.baidu.com" method="get" enctype="application/x-www-form-urlencoded" id="form1">
+        <input type="text" name="username" />
+        <input type="submit" id="btn1" value="提交" />
+    </form>
+
+    <select name="names" id="names" multiple="true" size="2">
+        <option value="1">Tom</option>
+        <option value="2">Jack</option>
+        <option value="3">Rose</option>
+    </select>
+
+    <button id="btn2">按钮</button>
+    <button id="btn3">增加选项</button>
+    <button id="btn4">删除选项</button>
+    <button id="btn5">选定选项</button>
+
+
+    <table id="table">
+        <caption>表格</caption>
+        <tr>
+            <td>1</td>
+        </tr>
+    </table>
+    <button id="btn6">选择行</button>
+    <button id="btn7">添加行</button>
+    <button id="btn8">删除行</button>
+    <script>
+        // var form1 = document.getElementById("form1");
+        // alert(form1.length);
+        // var btn1 = document.getElementById("btn1");
+        // btn1.addEventListener("click", function () {
+        //     alert(form1.elements[0].value);
+        //     form1.action = "http://www.qq.com";
+        //     form1.submit();
+        //     console.log(form1);
+        //
+        // })
+
+        var btn2 = document.getElementById("btn2");
+
+        btn2.addEventListener("click", function () {
+            var select = document.getElementById("names");
+
+            alert(select.multiple);
+            alert(select.selectedIndex);
+            alert(select.size);
+            alert(select.value);
+            select.value = 1;
+        });
+
+        var newOption = new Option("lwei", "4");
+        var btn3 = document.getElementById("btn3");
+        btn3.addEventListener("click", function () {
+            var select = document.getElementById("names");
+            select.add(newOption, select.options[2]);
+        });
+
+        var btn4 = document.getElementById("btn4");
+        btn4.addEventListener("click", function(){
+            var select = document.getElementById("names");
+            select.remove(2);
+        });
+
+        var btn5 = document.getElementById("btn5");
+        btn5.addEventListener("click", function(){
+            var select = document.getElementById("names");
+            var option = select.options[0];
+            alert(option.value);
+            alert(option.selected);
+            alert(option.label);
+
+        });
+
+        var btn6 = document.getElementById("btn6");
+        btn6.addEventListener("click", function () {
+            var table = document.getElementById("table");
+            alert(table.rows[0]);
+        });
+
+        var btn7 = document.getElementById("btn7");
+        btn7.addEventListener("click", function () {
+            var table = document.getElementById("table");
+            table.insertRow(0);
+            table.rows[0].insertCell(0);
+            table.rows[0].cells[0].appendChild(document.createTextNode("hello"));
+        });
+
+        var btn8 = document.getElementById("btn8");
+        btn8.addEventListener("click", function () {
+            var table = document.getElementById("table");
+            table.deleteRow(0);
+        });
+    </script>
+</body>
+</html>
