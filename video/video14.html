@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            color : red;
+        }
+        #div1:first-letter{
+            color : black;
+        }
+
+        .class1{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .class2{
+            background-color: yellow;
+        }
+
+        .class3{
+            color: blue;
+        }
+
+        p{
+            color: red;
+        }
+        div{
+            color: blue;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../css/hello.css">
+</head>
+<body>
+    <div id="div1">
+        hello
+    </div>
+
+    <div id="div2">lwei</div>
+
+    <button id="addClass">添加类样式</button>
+    <button id="removeClass">移除类样式</button>
+    <button id="toggleClass">切换类样式</button>
+    <button id="containClass">包含类样式</button>
+
+    <p>段落</p>
+    <div>my name is lwei</div>
+    <script type="application/javascript">
+        var div1 = document.getElementById("div1");
+        // div1.setAttribute("style","width:100px; height:100px; border:1px solid red");
+
+        var style = div1.style;
+        style.width = "100px";
+        style.height = "100px"
+        style.border = "1px solid red";
+        style.background = "yellow";
+        style.cssFloat = "right";
+
+        // alert(style.color);
+
+
+        var computedStyle = window.getComputedStyle(div1, "first-letter");
+        // alert(computedStyle.color);
+
+        var div2 = document.getElementById("div2");
+        // div2.setAttribute("class", "class1");
+        div2.className = "class1 class2";
+
+        var addClass = document.getElementById("addClass");
+        addClass.addEventListener("click", function () {
+            div2.classList.add("class3");
+        });
+        var removeClass = document.getElementById("removeClass");
+        removeClass.addEventListener("click", function () {
+            div2.classList.remove("class2");
+        });
+        var toggleClass = document.getElementById("toggleClass");
+        toggleClass.addEventListener("click", function () {
+            div2.classList.toggle("class2");
+        });
+        var containClass = document.getElementById("containClass");
+        containClass.addEventListener("click", function () {
+            alert(div2.classList.contains("class2"));
+        });
+
+        var cssStyles = document.styleSheets;
+        // alert(cssStyles[0].cssRules[0].cssText);
+        // cssStyles[1].insertRule("p{font-size:30px}");
+        cssStyles[1].disabled = true;
+    </script>
+</body>
+</html>
