@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="" method="post">
+        <input type="text" name="username" id="username" />
+        <input type="password" name="password" id="password" />
+        <input type="button" value="登入" id="btn" />
+        <script type="application/javascript">
+            var btn = document.getElementById("btn");
+            btn.addEventListener("click", function(){
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+                document.cookie = "username=" + username + ";max-age=30";
+                document.cookie = "password=" + password + ";max-age=30";
+            });
+            console.log(document.cookie);
+            var cookies = document.cookie.split(";");
+            for(var i = 0; i < cookies.length; i++){
+                var cookie = cookies[i];
+                var name = cookie.substring(0, cookie.indexOf("=")).trim();
+                var value = cookie.substring(cookie.indexOf("=") + 1).trim();
+                console.log(name + " = " + value);
+            }
+
+            localStorage.setItem("c", "China");
+            localStorage.setItem("e", "England");
+            console.log(localStorage.getItem("c"));
+            console.log(localStorage.key(0));
+            localStorage.removeItem("e");
+            localStorage.clear();
+        </script>
+    </form>
+</body>
+</html>
