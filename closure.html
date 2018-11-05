@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript closure</title>
+    <script src="jquery/jquery-1.11.3.min.js"></script>
+    <script type="application/javascript">
+        //第1种写法
+        // function Circle(r) {
+        //     this.r = r;
+        // }
+        // Circle.PI = 3.14159;
+        // Circle.prototype.area = function() {
+        //     return Circle.PI * this.r * this.r;
+        // }
+        //
+        // var c = new Circle(1.0);
+        // alert(c.area());
+
+
+
+        //第2种写法
+        // var Circle = function() {
+        //     var obj = new Object();
+        //     obj.PI = 3.14159;
+        //
+        //     obj.area = function( r ) {
+        //         return this.PI * r * r;
+        //     }
+        //     return obj;
+        // }
+        //
+        // var c = new Circle();
+        // alert( c.area( 1.0 ) );
+
+        // (function selfApplicative(funArg) {
+        //
+        //     if (funArg && funArg === selfApplicative) {
+        //         alert('self-applicative');
+        //         return;
+        //     }
+        //
+        //     selfApplicative(selfApplicative);
+        //
+        // })();
+
+        // var z = 10;
+        //
+        // function foo() {
+        //     alert(z);
+        // }
+        //
+        // foo(); // 10 – 静态作用域和动态作用域情况下都是
+        //
+        // (function () {
+        //
+        //     var z = 20;
+        //     foo(); // 10 – 静态作用域情况下, 20 – 动态作用域情况下
+        //
+        // })();
+
+        // 将foo函数以参数传递情况也是一样的
+
+        // (function (funArg) {
+        //
+        //     var z = 30;
+        //     funArg(); // 10 – 静态作用域情况下, 30 – 动态作用域情况下
+        //
+        // })(foo);
+
+       //  var str = "hello, world!";
+       //
+       //  var result = str.match("world");
+       //
+       //  console.log(result);
+       //
+       //  var ZIP = "12345-1234";
+       //
+       //  result = ZIP.match(/^\d{5}(-\d{4})?$/);
+       //
+       //  console.log(result.groups);
+       //
+       // var characters = $.map(['this', 'that'], function (value) {
+       //     return value.split('');
+       // })
+       //
+       //  console.log(characters);
+       //
+       // var index = $.inArray(2, [1, 2, 3, 4, 5 ]);
+       // console.log(index);
+
+        // var arr = $.makeArray({a:1, b:2});
+        // console.log(arr);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
