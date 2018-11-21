@@ -564,7 +564,7 @@ function loadPageBeginHtml() {
         dataType: "text",
         contentType: "application/json; charset=utf-8",
         success: function (n) {
-            n && (n.indexOf("<script") > -1 ? $.getScript(location.protocol + "//common.cnblogs.com/script/jquery.writeCapture-min.js", function () {
+            n && (n.indexOf("<script") > -1 ? $.getScript(location.protocol + "//common.cnblogs.com/script/js.writeCapture-min.js", function () {
                 $("#page_begin_html").writeCapture().html(n).show()
             }) : $("#page_begin_html").html(n).show())
         }
@@ -579,7 +579,7 @@ function loadPageEndHtml() {
         dataType: "text",
         contentType: "application/json; charset=utf-8",
         success: function (n) {
-            n && (n.indexOf("<script") > -1 ? $.getScript(location.protocol + "//common.cnblogs.com/script/jquery.writeCapture-min.js", function () {
+            n && (n.indexOf("<script") > -1 ? $.getScript(location.protocol + "//common.cnblogs.com/script/js.writeCapture-min.js", function () {
                 $("#page_end_html").writeCapture().html(n).show()
             }) : $("#page_end_html").html(n).show())
         }
@@ -593,7 +593,7 @@ function loadBlogNews() {
         type: "get",
         dataType: "text",
         success: function (n) {
-            n && (n.indexOf("<script") < n.indexOf("<script>getFollowStatus") ? $.getScript(location.protocol + "//common.cnblogs.com/script/jquery.writeCapture-min.js", function () {
+            n && (n.indexOf("<script") < n.indexOf("<script>getFollowStatus") ? $.getScript(location.protocol + "//common.cnblogs.com/script/js.writeCapture-min.js", function () {
                 $("#blog-news").writeCapture().html(n).show()
             }) : n.indexOf("错误提示：发生了异常") < 0 && $("#blog-news").html(n).show())
         }
@@ -1029,7 +1029,7 @@ function load_page_begin_html() {
         data: {blogApp: currentBlogApp},
         dataType: "text",
         success: function (n) {
-            n && (n.indexOf("<script") > -1 ? $.getScript(location.protocol + "//common.cnblogs.com/script/jquery.writeCapture-min.js", function () {
+            n && (n.indexOf("<script") > -1 ? $.getScript(location.protocol + "//common.cnblogs.com/script/js.writeCapture-min.js", function () {
                 $("#page_begin_html").writeCapture().html(n)
             }) : $("#page_begin_html").html(n))
         }

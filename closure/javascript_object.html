@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>everything is object</title>
+    <!--<script src="../js/js-1.11.3.min.js" />-->
+</head>
+<body>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script type="application/javascript">
+        // function show(x) {
+        //
+        //     console.log(typeof x);    // undefined
+        //     console.log(typeof 10);   // number
+        //     console.log(typeof 'abc'); // string
+        //     console.log(typeof true);  // boolean
+        //
+        //     console.log(typeof function () {});  //function
+        //
+        //     console.log(typeof [1, 'a', true]);  //object
+        //     console.log(typeof { a: 10, b: 20 });  //object
+        //     console.log(typeof null);  //object
+        //     console.log(typeof new Number(10));  //object
+        // }
+        // show();
+        //
+        // var obj = new Object();
+        //
+        // var proto = Function.prototype;
+        //
+        // console.log(proto);
+
+        // var defer = jQuery.Deferred();
+        //
+        // defer.done(function(a,b){
+        //     return a * b;
+        // }).done(function( result ) {
+        //     console.log("result = " + result);
+        // }).then(function( a, b ) {
+        //     return a * b;
+        // }).done(function( result ) {
+        //     console.log("result = " + result);
+        // }).then(function( a, b ) {
+        //     return a * b;
+        // }).done(function( result ) {
+        //     console.log("result = " + result);
+        // });
+        //
+        // defer.resolve( 2, 3 );
+
+        // d = $.Deferred()
+        // d.then(function(){
+        //     throw new Error('err')
+        // }).fail(function(){
+        //     console.log('fail')
+        // })
+        // d.resolve()
+
+        // var deferred = $.Deferred();
+        // deferred.then(function(value) {return value + 1;})
+        //     .then(function(value) {return value + 2;})
+        //     .done(function(value) {alert(value); return value + 5;})
+        //     .done(function(value) {alert(value);});
+        //
+        // deferred.resolve(0);
+
+        // var deferred = $.Deferred();
+        // deferred.then(function(){
+        //     throw new Error('An error message');
+        // }).then(
+        //     function(){
+        //         console.log('First success function');
+        //     },
+        //     function () {
+        //         console.log('First failure function');
+        //     }
+        // ).then(
+        //     function () {
+        //         console.log('Second success function');
+        //     },
+        //     function(){
+        //         console.log('Second failure function');
+        //     }
+        // );
+        //
+        // deferred.resolve();
+
+        var deferred = $.Deferred();
+        deferred.then(
+            function (value) {
+                console.log('success: ' + value);
+            },
+            function (value) {
+                console.log('fail: ' + value);
+            }
+        ).always(
+            function () {
+                console.log('I am always logged');
+            }
+        );
+
+        deferred.reject('An error');
+
+    </script>
+</body>
+</html>
