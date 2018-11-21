@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QUnit - Test options noglobals and notrycatch</title>
+    <link rel="stylesheet" href="../css/qunit-2.8.0.css" />
+</head>
+<body>
+    <div id="qunit"></div>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/qunit-2.8.0.js"></script>
+    <script type="application/javascript">
+        QUnit.module('Core');
+        QUnit.test('Testing the noglobals option', function (assert) {
+            assert.expect(1);
+            window.bookName = 'jQuery in Action';
+            assert.strictEqual(bookName, 'jQuery in Action', 'String are equal');
+        });
+
+        QUnit.module('Ajax');
+        QUnit.test('Testing the notrycatch option', function (assert) {
+            assert.expect(1);
+            assert.strictEqual(add(2, 2), 4, 'The sum of 2 plus 2 is equal to 4');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta charset="utf-8" />
+     <title>QUnit - Test 1</title>
+     <link rel="stylesheet" href="../css/qunit-2.8.0.css" />
+  </head>
+  <body>
+    <div id="qunit"></div>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/qunit-2.8.0.js"></script>
+    <script type="application/javascript">
+
+       function sum(a, b){
+           return a + b;
+       }
+
+       function isEven(number){
+           return number % 2 === 0;
+       }
+
+       function Person(fullName){
+           this.fullName = fullName;
+       }
+
+       function isEven2(number){
+           if(typeof number !== 'number'){
+               throw new Error('The passed argument is not a number');
+           }
+
+           return number % 2 === 0;
+       }
+
+       var human = {fullName : null};
+
+       QUnit.test('My first test', function(assert){
+           assert.expect(7);
+           assert.strictEqual(sum(2, 2), 4, 'sum of two positive numbers');
+           assert.strictEqual(sum(-2, -2), -4, 'sum of tow negative numbers');
+           assert.strictEqual(sum(2, 0), 2, 'sum of a positive number and the neutral element');
+           assert.notStrictEqual(sum(-2, 2), false, 'sum of a negative and a positive number is equal to false');
+           assert.equal($.trim(' '), '', 'Trimming a spaces-only string returns an empty string');
+           assert.notStrictEqual(new Array(1, 2, 3), [1, 2, 3], 'Two arrays are different nuless they point to the same memory address');
+           assert.ok(isEven(4), '4 is an even number');
+       });
+
+       QUnit.test('Testing propEqual() and deepEqual()', function (assert) {
+           assert.expect(2);
+
+           var person = new Person('John Doe');
+           human.fullName = 'John Doe';
+
+           assert.propEqual(person, human, 'Passes. Same properties and values');
+           // assert.deepEqual(person, human, 'Fails. Same properties and values, but different prototype');
+
+           assert.throws(function(){isEven2('test');}, new Error('The passed argument is not a number'), 'Passing a string throws an error');
+       });
+
+
+    </script>
+   </body>
+</html>
