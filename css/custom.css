@@ -1,5 +1,42 @@
-.instroduce-bg1{
+html {
+    font-size: 1rem;
+}
+
+@media (min-width: 576px) {
+    html {
+        font-size: 0.7rem;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 992px) {
+    html {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 1rem;
+    }
+}
+
+.introduce-bg1{
     background-image: url("../images/introduce-bg1.jpg");
     background-size: cover;
     width: 100%;
+}
+
+.introduce-bg2{
+    background-color: #D1D0F8;
+    padding: 60px;
+}
+
+.mtb-30{
+    margin: 30px;
 }
