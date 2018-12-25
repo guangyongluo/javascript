@@ -307,26 +307,82 @@
     </div>
 </div>
 
-<form>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+<!-- 联络我们 -->
+<div class="row mtb-30">
+    <div class="col text-center">
+        <img src="../images/introduce-title4.jpg" class="rounded" alt="">
     </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+</div>
+<form class="needs-validation" novalidate>
+    <div class="container">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4" class="col-form-label sr-only">请输入您的姓名</label>
+                <input type="text" class="form-control form-control-lg" id="inputEmail4" placeholder="请输入您的姓名" required>
+                <div class="invalid-feedback">
+                    请输入您的姓名
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4" class="col-form-label sr-only">请输入您的手机</label>
+                <input type="text" class="form-control form-control-lg" id="inputPassword4" placeholder="请输入您的手机" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress" class="col-form-label sr-only">请输入您的Email</label>
+            <input type="email" class="form-control form-control-lg" id="inputAddress" placeholder="请输入您的Email">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect2" class="col-form-label sr-only">询问主题</label>
+            <select class="form-control form-control-lg" id="exampleFormControlSelect2">
+                <option>请选择...</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1" class="col-form-label sr-only">请输入询问内容</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+
+        <div class="row justify-content-center">
+            <button type="submit" class="btn btn-primary">提交</button>
+        </div>
+
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+        </div>
     </div>
-    <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+
 </form>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script type="application/javascript">
+    $('.custom-control-input').prop('indeterminate', true);
+
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
 </body>
 </html>
