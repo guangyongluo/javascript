@@ -44,3 +44,7 @@ html {
 .menu-tab{
     width: 70%;
 }
+
+.content{
+    display: none;
+}
