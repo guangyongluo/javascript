@@ -2,6 +2,10 @@ html {
     font-size: 1rem;
 }
 
+body{
+    position: relative;
+}
+
 @media (min-width: 576px) {
     html {
         font-size: 0.7rem;
@@ -38,7 +42,7 @@ html {
 }
 
 .mtb-30{
-    margin: 30px;
+    margin: 120px 0 30px 0;
 }
 
 .menu-tab{
@@ -47,4 +51,66 @@ html {
 
 .content{
     display: none;
+}
+
+#nav-spy{
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#nav-spy a{
+    color: #ffffff;
+}
+
+.banner-block{
+    position: absolute;
+    top: 40%;
+    left: -40%;
+}
+
+.food-bg{
+    background-image: url("../images/food-bg.png");
+    background-repeat: no-repeat;
+}
+
+.blockquote-footer{
+    color: #145c5c;
+    margin-top: 30px;
+}
+
+.block-title{
+    padding: 10px;
+    font-weight: 300;
+    color: #006A73;
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    font-size: 24px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.menu-tab td, .menu-tab th{
+    vertical-align: middle;
+    text-align: center;
+    border: 0px none;
+}
+
+.list-bg{
+    background-color: #F5F5F5;
+    padding: 100px
+}
+
+.list-content-bg{
+    background-color: #E4E4E4;
+    padding: 100px
+}
+
+.content-form{
+    background-color: #E0E0E0;
+    padding: 50px
+}
+
+.page-footer{
+    background-color: #C3C3C3;
+    color: #FFFFFF;
+    padding: 30px
 }
