@@ -17,9 +17,9 @@
     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 
-<div class="content container-fluid">
+<div class="content container">
     <!-- 导览列 -->
-    <nav id="nav-spy" class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav id="nav-spy" class="navbar navbar-expand-lg navbar-dark sticky-top">
         <a class="navbar-brand" href="#">
             <img src="../images/logo.png" alt="">
         </a>
@@ -123,7 +123,7 @@
             </div>
         </div>
     </div>
-    <div class="introduce-bg1" class="img-fluid">
+    <div class="introduce-bg1 d-none d-lg-block" class="img-fluid">
         <div class="row">
             <div class="col-4 ml-auto">
                 <img src="../images/introduce-1.jpg" alt="" class="img-fluid">
@@ -138,31 +138,31 @@
     </div>
     <div class="introduce-bg2" >
         <div class="row align-items-center">
-            <div class="col">
+            <div class="col-12 col-md-6 col-lg-3">
                 <img src="../images/introduce-2.jpg" class="img-fluid img-thumbnail">
             </div>
-            <div class="col">
+            <div class="col-12 col-md-6 col-lg-3">
                 精湛厨艺，一味入魂，食的艺术
             </div>
-            <div class="col">
+            <div class="col-12 col-md-6 col-lg-3">
                 <img src="../images/introduce-3.jpg" class="img-fluid img-thumbnail">
             </div>
-            <div class="col">
+            <div class="col-12 col-md-6 col-lg-3">
                 动物友善，欢迎毛小孩与其他宠物
             </div>
         </div>
 
         <div class="row align-items-center">
-            <div class="col">
+            <div class="col-12 col-md-6 col-lg-3">
                 <img src="../images/introduce-4.jpg" class="img-fluid img-thumbnail">
             </div>
-            <div class="col">
+            <div class="col-12 col-md-6 col-lg-3">
                 健康取向，好的食材，合理的价格
             </div>
-            <div class="col">
+            <div class="col-12 col-md-6 col-lg-3">
                 <img src="../images/introduce-5.jpg" class="img-fluid img-thumbnail">
             </div>
-            <div class="col">
+            <div class="col-12 col-md-6 col-lg-3">
                 主厨当家，美味把关，道道精彩
             </div>
         </div>
@@ -176,7 +176,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <table class="table table-bordered table-hover table-dark menu-tab mx-auto">
+            <table class="table table-bordered table-hover table-dark menu-tab mx-auto table-responsive">
                 <thead>
                 <tr>
                     <th class="text-center">意大利面</th>
@@ -217,7 +217,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-4 list-bg">
+        <div class="col-4 list-bg d-none d-md-block">
             <div class="list-group" id="list-tab" role="tablist">
                 <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">严选食材</a>
                 <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">手工制作</a>
@@ -225,7 +225,7 @@
                 <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">终于初心</a>
             </div>
         </div>
-        <div class="col-8 list-content-bg" >
+        <div class="col-8 list-content-bg d-none d-md-block" >
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">每项食材，都是指定原生态农村供应，每日限量当天直送新鲜食材，并且
                 定期检查食物品质。</div>
@@ -236,6 +236,34 @@
                 <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">检查不加色素、香精、防腐剂等人工添加剂，使用绿色纯天然香料调味。</div>
             </div>
         </div>
+        <div class="list-group d-sm-block d-md-none">
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">严选食材</h5>
+                </div>
+                <p class="mb-1">每项食材，都是指定原生态农村供应，每日限量当天直送新鲜食材，并且定期检查食物品质。</p>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">手工制作</h5>
+                </div>
+                <p class="mb-1">所有烹饪原则都是以保留食物原味为第一理念，配合不同食物的不容特性，由我们厨师用心烹饪出一道道私房菜。每道菜都是独一无二的原味体验</p>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">超凡体验</h5>
+                </div>
+                <p class="mb-1">罗葳私房菜就跟环境一样，没有炫目的噱头，却很温和，很踏实。让顾客享受美食的同时也能带来回家的感觉</p>
+                <small class="text-muted">Donec id elit non mi porta.</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">终于初心</h5>
+                </div>
+                <p class="mb-1">罗葳私房菜就跟环境一样，没有炫目的噱头，却很温和，很踏实。让顾客享受美食的同时也能带来回家的感觉</p>
+                <small class="text-muted">检查不加色素、香精、防腐剂等人工添加剂，使用绿色纯天然香料调味。</small>
+            </a>
+        </div>
     </div>
 
     <!-- 主厨介绍 -->
@@ -245,19 +273,19 @@
         </div>
     </div>
     <div class="row w-75 mx-auto" id="chef">
-        <div class="col-4">
+        <div class="col-sm-12 col-md-4">
             <figure class="figure">
                 <img src="../images/chef-1.jpg" class="figure-img img-fluid rounded" alt="">
                 <figcaption class="figure-caption">行政主厨-JOSH CLARK</figcaption>
             </figure>
         </div>
-        <div class="col-4">
+        <div class="col-sm-12 col-md-4">
             <figure class="figure">
                 <img src="../images/chef-2.jpg" class="figure-img img-fluid rounded" alt="">
                 <figcaption class="figure-caption">第一主厨-JOHN DOE</figcaption>
             </figure>
         </div>
-        <div class="col-4">
+        <div class="col-sm-12 col-md-4">
             <figure class="figure">
                 <img src="../images/chef-3.jpg" class="figure-img img-fluid rounded" alt="">
                 <figcaption class="figure-caption">首席主厨-MARY JANE</figcaption>
@@ -293,11 +321,11 @@
             <div class="form-group">
                 <label for="exampleFormControlSelect2" class="col-form-label sr-only">询问主题</label>
                 <select class="form-control form-control-lg" id="exampleFormControlSelect2">
-                    <option>请选择...</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
+                    <option>请选择询问主题</option>
+                    <option>点餐</option>
+                    <option>服务</option>
+                    <option>环境</option>
+                    <option>价格</option>
                 </select>
             </div>
             <div class="form-group">
@@ -324,9 +352,13 @@
             </div>
         </div>
     </footer>
+
+
 </div>
 
+<div id="toTop">
 
+</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="../js/jquery-3.3.1.min.js"></script>
@@ -366,8 +398,19 @@
                 $("#nav-spy").css("transition", "background 0.5 linear");
                 $("#nav-spy").css("background-color", "rgba(70, 70, 70, 0.6)");
             }else{
-                $("#nav-spy").css("background-color", "rgba(255, 255, 255, 0.6)");
+                $("#nav-spy").css("background-color", "rgba(70, 70, 70, 0.6)");
             }
+
+
+            if($(this).scrollTop()){
+                $("#toTop").fadeIn();
+            }else{
+                $("#toTop").fadeOut();
+            }
+        });
+        
+        $("#toTop").click(function () {
+            $("html").animate({scrollTop: 0}, 600);
         });
 
         $("#nav-spy li a[href^='#']").on('click', function (e) {

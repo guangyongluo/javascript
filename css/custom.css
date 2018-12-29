@@ -54,11 +54,21 @@ body{
 }
 
 #nav-spy{
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(70, 70, 70, 0.6);
 }
 
 #nav-spy a{
     color: #ffffff;
+}
+
+@media (max-width: 370px){
+    #nav-spy button{
+        padding: 2px;
+    }
+
+    #nav-spy a.navbar-brand{
+        margin-right: 0px;
+    }
 }
 
 .banner-block{
@@ -94,10 +104,20 @@ body{
     border: 0px none;
 }
 
+.menu-tab tr{
+    white-space: nowrap;
+}
+
 .list-bg{
     background-color: #F5F5F5;
-    padding: 100px
 }
+
+@media (min-width: 992px) {
+    .list-bg{
+        padding: 100px
+    }
+}
+
 
 .list-content-bg{
     background-color: #E4E4E4;
@@ -113,4 +133,21 @@ body{
     background-color: #C3C3C3;
     color: #FFFFFF;
     padding: 30px
+}
+
+#toTop{
+    position: fixed;
+    bottom: 20px;
+    right: 5px;
+    display: none;
+    background-image: url("../images/gotop.png");
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+@media (max-width: 575px) {
+    .content-form .form-control-lg{
+        font-size: 1rem;
+    }
 }
