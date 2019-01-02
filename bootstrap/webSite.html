@@ -37,10 +37,34 @@
                                 <i class="fa fa-heart"></i>
                                 愿望清单
                             </a>
-                            <a href="#">
+                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-unlock-alt"></i>
                                 会员登入
                             </a>
+                            <div class="dropdown-menu">
+                                <form class="px-4 py-3">
+                                    <div class="form-group">
+                                        <label for="exampleDropdownFormEmail1">账户</label>
+                                        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleDropdownFormPassword1">密码</label>
+                                        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                            <label class="form-check-label" for="dropdownCheck">
+                                                记住我
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">登入</button>
+                                </form>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">新会员注册</a>
+                                <a class="dropdown-item" href="#">忘记密码</a>
+                            </div>
                             <a href="#">
                                 <i class="fa fa-share-square"></i>
                                 会员登出
@@ -57,7 +81,7 @@
                 <div class="row">
                     <div class="col-md-10">
                         <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand" href="#">
+                            <a class="navbar-brand header-logo" href="#">
                                 <img src="../images/logo2.png">
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,6 +100,11 @@
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             客厅
                                         </a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">沙发</a>
+                                            <a class="dropdown-item" href="#">桌子</a>
+                                            <a class="dropdown-item" href="#">电视柜</a>
+                                        </div>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">灯饰</a>
@@ -96,6 +125,18 @@
                                 <a href="#" class="cart-toggler search-icon">
                                     <i class="fa fa-search"></i>
                                 </a>
+                                <div class="header-bottom-search">
+                                    <form class="search-box" action="#" method="post">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for..." aria-describedby="search-button">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="button" id="search-button">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </li>
                             <li>
                                 <a href="#" class="cart-toggler mini-cart-icon">
@@ -114,5 +155,6 @@
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
