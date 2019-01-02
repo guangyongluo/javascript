@@ -1,4 +1,4 @@
-@import  'http://fonts.googleapis.com/earlyaccess/notosanstc.css';
+﻿@import  'http://fonts.googleapis.com/earlyaccess/notosanstc.css';
 
 /* 网站通用CSS */
 body{
@@ -123,4 +123,27 @@ ul{
 
 .cart-list {
     display: none;
+}
+
+/* 服务区块CSS设定 */
+.service{
+    padding: 60px 0;
+    border-bottom: 1px solid #009A86;
+
+}
+
+.service .single-item{
+    display: inline-block;
+    position: relative;
+    padding: 15px 30px 15px 60px;
+}
+
+
+
+.service .single-item .fa-4x{
+    font-size: 50px;
+    color: #009A86;
+    left: 15px;
+    position: absolute;
+    top: 15px;
 }
