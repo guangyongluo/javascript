@@ -231,3 +231,125 @@ ul{
     font-size: 18px;
     font-weight: 700;
 }
+
+/* 商品详细叙述区块 */
+@media (min-width: 576px){
+    #exampleModal .modal-dialog{
+        max-width: 90%;
+        width: 870px;
+    }
+}
+
+.modal-dialog .product-info h1{
+    font-size: 22px;
+    font-weight: normal;
+    color: #009A86;
+}
+
+.product-info .price{
+    color: #FF6F24;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.product-info input {
+    border: 1px solid #dddddd;
+    float: left;
+    height: 40px;
+    text-align: center;
+    width: 60px;
+}
+
+.product-info .quick-add-to-cart {
+    border-bottom: 1px solid #e5e5e5;
+    float: left;
+    margin: 0 0 20px;
+    padding: 0 0 38px;
+    width: 100%;
+}
+
+.product-info .quick-add-to-cart .single-add-to-cart-button {
+    background: #c38749 none repeat scroll 0 0;
+    border: medium none;
+    color: #ffffff;
+    float: left;
+    font-weight: 700;
+    height: 40px;
+    margin-left: 15px;
+    padding: 0 40px;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+}
+
+.product-info .quick-add-to-cart .single-add-to-cart-button:hover {
+    background: #282828 none repeat scroll 0 0;
+    cursor: pointer;
+}
+
+
+.product-info .quick-desc {
+    border-bottom: 1px solid #e5e5e5;
+    color: #909295;
+    float: left;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 21px;
+    margin: 0 0 25px;
+    padding: 0 0 15px;
+    width: 100%;
+}
+
+
+.product-info h3.widget-title-modal {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    color: #42414f;
+    float: left;
+    font-size: 16px;
+    line-height: 30px;
+    margin: 0 0 5px;
+    text-align: left;
+    text-transform: none;
+    width: 100%;
+}
+
+.modal .widget .social-icons li {
+    float: left;
+    line-height: 30px;
+    list-style: outside none none;
+    margin-right: 10px;
+}
+
+.modal .widget .social-icons li .social-icon {
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    color: #909295;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    width: 40px;
+}
+
+.modal .widget .social-icons li .social-icon.facebook:hover {
+    background: #3b579d none repeat scroll 0 0;
+    border: 1px solid #3b579d;
+}
+.modal .widget .social-icons li .social-icon.twitter:hover {
+    background: #3acaff none repeat scroll 0 0;
+    border: 1px solid #3acaff;
+}
+.modal .widget .social-icons li .social-icon.pinterest:hover {
+    background: #cb2027 none repeat scroll 0 0;
+    border: 1px solid #cb2027;
+}
+.modal .widget .social-icons li .social-icon.gplus:hover {
+    background: #d11717 none repeat scroll 0 0;
+    border: 1px solid #d11717;
+}
+.modal .widget .social-icons li .social-icon.linkedin:hover {
+    background: #0097bd none repeat scroll 0 0;
+    border: 1px solid #0097bd;
+}
+.modal .widget .social-icons li .social-icon:hover {
+    color: #ffffff;
+}
