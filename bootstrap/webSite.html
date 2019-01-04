@@ -223,7 +223,9 @@
             <div class="row">
                 <div class="card-deck">
                     <div class="card">
-                        <img src="../images/features-p1.jpg" class="card-img-top" alt="...">
+                        <a data-toggle="modal" data-target="#exampleModal">
+                            <img src="../images/features-p1.jpg" class="card-img-top" alt="...">
+                        </a>
                         <div class="card-body">
                             <h4 class="card-title">EKTORP 扶手椅 <span class="badge badge-pill badge-info">新品</span></h4>
                             <div class="rating-icon float-left">
@@ -287,12 +289,38 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">EKTORP 扶手椅</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <div col-6>
+                                            <img src="../images/features-p1.jpg" alt="">
+                                        </div>
+                                        <div col-6></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- 推荐商品区块 -->
-    <section class="recommend">
+    <section class="recommend clearfix">
         <div class="container">
             <div class="section-title mt-5">
                 <h4>推荐商品</h4>
@@ -313,6 +341,205 @@
                 <a href="#">
                     <img src="../images/ad-3.jpg" alt="">
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 商品分类 -->
+    <section class="category-area">
+        <div class="container">
+            <div class="section-title mt-5">
+                <h4>商品分类</h4>
+            </div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-pills mb-3 nav-fill pb-3" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="pill" href="#pills-bedroom" role="tab" aria-controls="bedroom" aria-selected="true">卧室</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="pill" href="#pill-lighting" role="tab" aria-controls="lighting" aria-selected="false">灯光</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="messages-tab" data-toggle="pill" href="#pill-livingroom" role="tab" aria-controls="livingroom" aria-selected="false">客厅</a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="pills-bedroom" role="tabpanel" aria-labelledby="pills-tab">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="../images/bedroom-1.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="col-6">
+                                    <h6>EKTORP 扶手椅</h6>
+                                    <div class="rating-icon">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <p class="category-price">RMB 3000</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="../images/bedroom-2.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="col-6">
+                                    <h6>EKTORP 扶手椅</h6>
+                                    <div class="rating-icon">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <p class="category-price">RMB 3000</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="../images/bedroom-3.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="col-6">
+                                    <h6>EKTORP 扶手椅</h6>
+                                    <div class="rating-icon">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <p class="category-price">RMB 3000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade show" id="pill-lighting" role="tabpanel" aria-labelledby="pill-lighting">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="../images/light-1.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="col-6">
+                                    <h6>EKTORP 扶手椅</h6>
+                                    <div class="rating-icon">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <p class="category-price">RMB 3000</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="../images/light-2.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="col-6">
+                                    <h6>EKTORP 扶手椅</h6>
+                                    <div class="rating-icon">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <p class="category-price">RMB 3000</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="../images/light-3.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="col-6">
+                                    <h6>EKTORP 扶手椅</h6>
+                                    <div class="rating-icon">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <p class="category-price">RMB 3000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade show" id="pill-livingroom" role="tabpanel" aria-labelledby="pill-livingroom">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="../images/livingroom-1.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="col-6">
+                                    <h6>EKTORP 扶手椅</h6>
+                                    <div class="rating-icon">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <p class="category-price">RMB 3000</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="../images/livingroom-2.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="col-6">
+                                    <h6>EKTORP 扶手椅</h6>
+                                    <div class="rating-icon">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <p class="category-price">RMB 3000</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="../images/livingroom-3.jpg" alt="" class="img-fluid">
+                                </div>
+                                <div class="col-6">
+                                    <h6>EKTORP 扶手椅</h6>
+                                    <div class="rating-icon">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <p class="category-price">RMB 3000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

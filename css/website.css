@@ -219,3 +219,15 @@ ul{
         padding: 0;
     }
 }
+
+/* 推荐商品CSS */
+
+.category-area .nav{
+    border-bottom: 1px solid #007bff;
+}
+
+.category-price{
+    color: #009A86;
+    font-size: 18px;
+    font-weight: 700;
+}
