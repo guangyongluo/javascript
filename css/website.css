@@ -353,3 +353,79 @@ ul{
 .modal .widget .social-icons li .social-icon:hover {
     color: #ffffff;
 }
+
+/* 新品订阅区块CSS */
+h3.online-catalog{
+    background-image: url(../images/news.jpg);
+    width: 635px;
+    height: 300px;
+}
+
+.letter-box {
+    border: 2px solid #e6e6e6;
+    min-height: 300px;
+    padding: 30px;
+}
+
+.letter-title {
+    text-align: center;
+}
+
+.letter-title h4 {
+    border-bottom: 1px solid #efefef;
+    color: #484848;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 30px;
+    padding-bottom: 30px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+
+.letter-title i {
+    background: #ffffff none repeat scroll 0 0;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 73px;
+    width: 40px;
+}
+
+.letter-box > p {
+    color: #666;
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    text-align: center;
+    display: block;
+}
+
+form.search-box {
+    position: relative;
+}
+
+.letter-box form.search-box input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px solid #e8e8e8;
+    font-weight: 300;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 45px 0 15px;
+    text-align: left;
+    width: 100%;
+}
+
+.letter-box .btn {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    bottom: 0;
+    color: #bababa;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45px;
+}

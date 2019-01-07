@@ -569,6 +569,43 @@
         </div>
     </section>
 
+    <!-- 新品上市 -->
+    <div class="news-letter">
+        <div class="container">
+            <div class="section-title mt-5">
+                <h4>新品上市</h4>
+            </div>
+            <div class="row">
+                <div class="col-7">
+                    <a href="#">
+                        <h3 class="online-catalog text-hide">新品订阅</h3>
+                    </a>
+                </div>
+                <div class="col-5">
+                    <div class="letter-box">
+                        <div class="letter-title">
+                            <h4>订阅电子报</h4>
+                            <p>想要得到最新的商品咨询，请订阅我们的最新商品报</p>
+                        </div>
+                        <form action="#" method="post" class="search-box">
+                            <input type="text" name="search-letter" id="search-letter">
+                            <button type="button" id="search-letter-btn" class="btn btn-search">
+                                <i class="fa fa-paper-plane-o"></i>
+                            </button>
+                        </form>
+
+                        <div class="alert alert-danger" role="alert" style="display: none">
+                            <h4 class="alert-heading">input bar can`t be null</h4>
+                            <p>please type your email</p>
+                            <hr>
+                            <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/popper.min.js"></script>
@@ -578,6 +615,12 @@
     <script type="application/javascript">
         $(document).ready(function () {
             $('#tooltip').tooltip();
+
+            $('#search-letter-btn').click(function () {
+                if($('#search-letter-btn').val().length === 0){
+                    $('.alert').show();
+                }
+            });
         });
     </script>
 </body>
